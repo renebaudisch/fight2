@@ -65,6 +65,7 @@ header {
 
 .navbar li a.navbar-brand{
   line-height: 1px;
+  background: #fff;
 }
 
 .navbar li a img{
