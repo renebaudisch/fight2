@@ -1,13 +1,13 @@
-<div id="disabled">
+<div id="disabled" *ngIf="user.id===0">
   <div class="centerer">
     <span>Für die Nutzung des Tools müssen Sie angemeldet sein.</span><br>
     <span>Bitte melden Sie sich mit Ihren AppNexus-Console Zugangsdaten an: </span>
     <form autocomplete="on" id="loginForm" action="javascript:alert();" target="login_target" onfocus="" method="POST" enctype="multipart/form-data">
       <ul>
-        <li><label for="user">User: </label><input type="text" id="user"></li>
-        <li><label for="pass">Pass: </label><input type="password" id="pass"><br><br></li>
+        <li><label for="user">User: </label><input type="text" id="user" name="name" [(ngModel)]="user.name" placeholder="username" /></li>
+        <li><label for="pass">Pass: </label><input type="password" id="pass" name="pass" [(ngModel)]="user.pass" placeholder="password" /><br><br></li>
         <li></li>
-        <li><input type="submit" value="Login"></li>
+        <li><input type="submit" (click)="onSubmit()" value="Login"></li>
       </ul>
     </form>
     <br>
