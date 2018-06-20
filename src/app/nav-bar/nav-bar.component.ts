@@ -23,13 +23,13 @@ export class NavBarComponent implements OnInit {
 
 }
 
-export class NavbarElement {
+class NavbarElement {
   url: any;
   name: string;
   target: string;
 }
 
-export const ADMANTOOLS: NavbarElement[] = [{
+const ADMANTOOLS: NavbarElement[] = [{
   url: '/tools/ACE/',
   name: 'ACE',
   target: '_top'
@@ -55,7 +55,7 @@ export const ADMANTOOLS: NavbarElement[] = [{
   target: '_top'
 }];
 
-export const ADTECHTOOLS: NavbarElement[] = [{
+const ADTECHTOOLS: NavbarElement[] = [{
   url: '/tools/VideoStats/',
   name: 'Video Stats',
   target: '_top'
@@ -65,7 +65,7 @@ export const ADTECHTOOLS: NavbarElement[] = [{
   target: '_top'
 }];
 
-export const mainElements: NavbarElement[] = [{
+const mainElements: NavbarElement[] = [{
   url: ADMANTOOLS,
   name: 'Adman Tools',
   target: '',
