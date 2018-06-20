@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="nav navbar-nav">
       <li class="nav-item" *ngFor="let navbarMainElement of mainEntries">
-        <a *ngIf="!isString(navbarMainElement.url);" class="nav-link">{{navbarMainElement}}</a>
+        <a *ngIf="!isString(navbarMainElement.url);" class="nav-link">{{navbarMainElement.name}}</a>
         <ul *ngIf="!isString(navbarMainElement.url); else noUl">
           <li *ngFor="let navbarElement of admanEntries">
             <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
