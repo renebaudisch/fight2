@@ -4,30 +4,13 @@
       <li class="nav-item" *ngFor="let navbarMainElement of mainEntries">
         <a *ngIf="!isString(navbarMainElement.url);" class="nav-link">{{navbarMainElement.name}}</a>
         <ul *ngIf="!isString(navbarMainElement.url); else noUl">
-          <li *ngFor="let navbarElement of admanEntries">
+          <li *ngFor="let navbarElement of navbarMainElement.url">
             <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
           </li>
         </ul>
         <ng-template #noUl>
           <a class="nav-link" target="{{navbarMainElement.target}}" href="{{navbarMainElement.url}}">{{navbarMainElement.name}}</a>
         </ng-template>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">AdTech Tools</a>
-        <ul>
-          <li><a href="/tools/AdGap/" target="_top">AdGap</a></li>
-          <li><a href="/tools/badAdRequests/" target="_top">Bad Ad Requests</a></li>
-          <li><a href="/tools/blocktrack/" target="_top">Blocktrack</a></li>
-          <li><a href="/tools/blocktrack_mobile/" target="_top">Blocktrack Mobile</a></li>
-          <li><a href="/tools/crawler/" target="_blank">Crawler</a></li>
-          <li><a href="/tools/flairfire/" target="_top">Flairfire</a></li>
-          <li><a href="/tools/ovklib/" target="_top">OVK Libary</a></li>
-          <li><a href="/tools/pageSetGen/" target="_top">PageSet Generator</a></li>
-          <li><a href="/tools/VideoFillrates/" target="_top">Video Fillrates</a></li>
-          <li *ngFor="let navbarElement of adtechEntries">
-            <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
-          </li>
-        </ul>
       </li>
       <li class="nav-logo">
         <a class="navbar-brand"><img class="logo" src="{{logoUrl}}" /></a>

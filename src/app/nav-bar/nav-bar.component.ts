@@ -10,8 +10,6 @@ import {FlairfireComponent} from '../flairfire/flairfire.component';
 
 export class NavBarComponent implements OnInit {
   logoUrl = 'https://adtechnology.axelspringer.com/assets/img/logorot_kl.png';
-  admanEntries = ADMANTOOLS;
-  adtechEntries = ADTECHTOOLS;
   mainEntries = mainElements;
   isString = function(url) {
     return typeof(url) === 'string';
@@ -56,6 +54,42 @@ const ADMANTOOLS: NavbarElement[] = [{
 }];
 
 const ADTECHTOOLS: NavbarElement[] = [{
+  url: '/tools/AdGap/',
+  name: 'AdGap',
+  target: '_top'
+}, {
+  url: '/tools/badAdRequests/',
+  name: 'Bad Ad Requests',
+  target: '_top'
+}, {
+  url: '/tools/blocktrack/',
+  name: 'Blocktrack',
+  target: '_top'
+}, {
+  url: '/tools/blocktrack_mobile/',
+  name: 'Blocktrack mobile',
+  target: '_top'
+}, {
+  url: '/tools/crawler/',
+  name: 'Crawler',
+  target: '_top'
+}, {
+  url: '/tools/flairfire/',
+  name: 'Flairfire',
+  target: '_top'
+}, {
+  url: '/tools/ovklib/',
+  name: 'OVK Libary',
+  target: '_top'
+}, {
+  url: '/tools/pageSetGen/',
+  name: 'PageSet Generator',
+  target: '_top'
+}, {
+  url: '/tools/VideoFillrates/',
+  name: 'Video Fillrates',
+  target: '_top'
+}, {
   url: '/tools/VideoStats/',
   name: 'Video Stats',
   target: '_top'
