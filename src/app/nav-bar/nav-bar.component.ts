@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Routes} from '@angular/router';
 import {FlairfireComponent} from '../flairfire/flairfire.component';
+import { NavbarElement } from './nav-barElement';
+import { NavBarService } from '../services/nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,97 +16,27 @@ export class NavBarComponent implements OnInit {
   isString = function(url) {
     return typeof(url) === 'string';
   };
-  constructor() { }
+  getAdmanTools(): void {
+    this.mainEntries[0].url = this.navBarService.getAdmanTools();
+  }
+  getAdTechTools(): void {
+    this.mainEntries[1].url = this.navBarService.getAdTechTools();
+  }
+  constructor(private navBarService: NavBarService) { }
 
   ngOnInit() {
+    this.getAdmanTools();
+    this.getAdTechTools();
   }
 
 }
 
-class NavbarElement {
-  url: any;
-  name: string;
-  target: string;
-}
-
-const ADMANTOOLS: NavbarElement[] = [{
-  url: '/tools/ACE/',
-  name: 'ACE',
-  target: '_top'
-}, {
-  url: '/tools/catman/',
-  name: 'Catman',
-  target: '_top'
-}, {
-  url: '/tools/previewGenerator/',
-  name: 'Preview Generator',
-  target: '_top'
-}, {
-  url: '/tools/checkScript/',
-  name: 'Redirect Checker',
-  target: '_top'
-}, {
-  url: '/tools/html5integrator/',
-  name: 'HTML5 Integrator',
-  target: '_top'
-}, {
-  url: '/tools/VASTchecker/',
-  name: 'VAST Checker',
-  target: '_top'
-}];
-
-const ADTECHTOOLS: NavbarElement[] = [{
-  url: '/tools/AdGap/',
-  name: 'AdGap',
-  target: '_top'
-}, {
-  url: '/tools/badAdRequests/',
-  name: 'Bad Ad Requests',
-  target: '_top'
-}, {
-  url: '/tools/blocktrack/',
-  name: 'Blocktrack',
-  target: '_top'
-}, {
-  url: '/tools/blocktrack_mobile/',
-  name: 'Blocktrack mobile',
-  target: '_top'
-}, {
-  url: '/tools/crawler/',
-  name: 'Crawler',
-  target: '_top'
-}, {
-  url: '/tools/flairfire/',
-  name: 'Flairfire',
-  target: '_top'
-}, {
-  url: '/tools/ovklib/',
-  name: 'OVK Libary',
-  target: '_top'
-}, {
-  url: '/tools/pageSetGen/',
-  name: 'PageSet Generator',
-  target: '_top'
-}, {
-  url: '/tools/VideoFillrates/',
-  name: 'Video Fillrates',
-  target: '_top'
-}, {
-  url: '/tools/VideoStats/',
-  name: 'Video Stats',
-  target: '_top'
-}, {
-  url: '/tools/Placemanagement/',
-  name: 'Placements',
-  target: '_top'
-}];
-
 const mainElements: NavbarElement[] = [{
-  url: ADMANTOOLS,
+  url: {},
   name: 'Adman Tools',
   target: '',
 }, {
-  url: ADTECHTOOLS,
+  url: {},
   name: 'AdTech Tools',
   target: '',
 }, {

@@ -9,6 +9,7 @@ import { ToolframeComponent } from './toolframe/toolframe.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FlairfireComponent,
     ToolframeComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    MessagesComponent
   ],
   imports: [
     RouterModule,

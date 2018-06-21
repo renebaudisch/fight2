@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
-import * as http from 'http';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -13,40 +14,19 @@ export class LoginComponent implements OnInit {
     id: 0,
     pass: ''
   };
-  apiUser = {};
+  private nexusApi = 'https://adtechnology.axelspringer.com/node/nexus/post/auth';  // URL to web api
   onSubmit(): void {
     const postData = JSON.stringify({
       username: this.user.name,
       password: this.user.pass
     });
-    const options = {
-      protocol: 'https:',
-      hostname: 'adtechnology.axelspringer.com',
-      port: 443,
-      path: '/node/nexus/post/auth',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-    const req = http.request(options, (res) => {
-      res.setEncoding('utf8');
-      res.on('data', (chunk) => {
-        this.apiUser = JSON.stringify(chunk);
-      });
-      res.on('end', () => {
-        console.log('No more data in response.');
-      });
-
-    });
-
-    req.on('error', (e) => {
-      console.log(e.message);
-    });
-
-    req.end();
   }
-  constructor() {}
+  private log(message: string) {
+    this.messageService.add('LoginService: ' + message);
+  }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) {}
 
   ngOnInit() {
   }
