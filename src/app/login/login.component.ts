@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
-import { MessageService } from '../services/message.service';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +9,21 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user: User = {
+  @Input() user: User = {
     name: '',
     id: 0,
     pass: ''
   };
-  private nexusApi = 'https://adtechnology.axelspringer.com/node/nexus/post/auth';  // URL to web api
   onSubmit(): void {
-    const postData = JSON.stringify({
-      username: this.user.name,
-      password: this.user.pass
-    });
-  }
-  private log(message: string) {
-    this.messageService.add('LoginService: ' + message);
+    this.loginService.login(this.user)
+      .subscribe(entries => {
+        this.user = entries;
+        console.log(this.user);
+      });
   }
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) {}
+    private loginService: LoginService) {}
 
   ngOnInit() {
   }

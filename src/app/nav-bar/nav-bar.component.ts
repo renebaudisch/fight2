@@ -17,10 +17,12 @@ export class NavBarComponent implements OnInit {
     return typeof(url) === 'string';
   };
   getAdmanTools(): void {
-    this.mainEntries[0].url = this.navBarService.getAdmanTools();
+    this.navBarService.getAdmanTools()
+      .subscribe(entries => this.mainEntries[0].url = entries);
   }
   getAdTechTools(): void {
-    this.mainEntries[1].url = this.navBarService.getAdTechTools();
+    this.navBarService.getAdTechTools()
+      .subscribe(entries => this.mainEntries[1].url = entries);
   }
   constructor(private navBarService: NavBarService) { }
 

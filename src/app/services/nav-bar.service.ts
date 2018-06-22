@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { MessageService } from '../services/message.service';
 import { NavbarElement } from '../nav-bar/nav-barElement';
 import { ADMANTOOLS } from '../nav-bar/nav-barAdman';
 import { ADTECHTOOLS } from '../nav-bar/nav-barAdtech';
@@ -7,12 +9,14 @@ import { ADTECHTOOLS } from '../nav-bar/nav-barAdtech';
   providedIn: 'root',
 })
 export class NavBarService {
-  getAdmanTools(): NavbarElement[] {
-    return ADMANTOOLS;
+  getAdmanTools(): Observable<NavbarElement[]> {
+    this.messageService.add('fetched ADMANTOOLS');
+    return of(ADMANTOOLS);
   }
-  getAdTechTools(): NavbarElement[] {
-    return ADTECHTOOLS;
+  getAdTechTools(): Observable<NavbarElement[]> {
+    this.messageService.add('fetched ADTECHTOOLS');
+    return of(ADTECHTOOLS);
   }
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
 }
