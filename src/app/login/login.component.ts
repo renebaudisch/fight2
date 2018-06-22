@@ -10,13 +10,13 @@ import {LoginService} from '../services/login.service';
 export class LoginComponent implements OnInit {
   @Input() user: User = {
     name: '',
-    id: 0,
+    token: '',
     pass: ''
   };
   onSubmit(): void {
     this.loginService.login(this.user)
       .subscribe(entries => {
-        this.user = entries;
+        this.user.token = entries.token;
         console.log(this.user);
       });
   }
