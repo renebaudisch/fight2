@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-toolframe',
+  selector: 'app-external-integration',
   templateUrl: './toolframe.component.html',
   styleUrls: ['./toolframe.component.css']
 })
