@@ -3,4 +3,5 @@ export class User {
   loggedIn: boolean;
   pass: string;
   token: string;
+  status: string;
 }

@@ -12,14 +12,18 @@ export class LoginComponent implements OnInit {
     name: '',
     pass: '',
     loggedIn: !1,
-    token: ''
+    token: '',
+    status: ''
   };
   onSubmit(): void {
     this.loginService.login(this.user)
       .subscribe(entries => {
-        this.user.loggedIn = !0;
-        document.cookie = 'anToken=' + entries.token + '; domain=' +  + ';path=/';
-        /* console.log(this.user); */
+        if (entries.status === 'OK') {
+          this.user.loggedIn = !0;
+          document.cookie = 'anToken=' + entries.token + '; path=/';
+        } else {
+          alert('erroruser/pass incorrect');
+        }
       });
   }
   constructor(
