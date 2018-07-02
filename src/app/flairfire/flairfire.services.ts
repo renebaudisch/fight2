@@ -21,7 +21,8 @@ export class FlairfireService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<FlairfireEntry>('https://adtechnology.axelspringer.com/tools/flaifire/data/get.php', postData, headers);
+    // return this.http.post<FlairfireEntry>('https://adtechnology.axelspringer.com/tools/flaifire/data/get.php', postData, headers);
+    return this.http.get<FlairfireEntry>('https://rene.baudisch-berlin.de/test.json', headers);
   }
   constructor(
     private http: HttpClient) {}
