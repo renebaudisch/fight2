@@ -1,5 +1,6 @@
 export class User {
   name: string;
-  token: string;
+  loggedIn: boolean;
   pass: string;
+  token: string;
 }

@@ -1,5 +1,3 @@
-export * from './e2e/app.po';
-export * from './src/app/app.module';
 export * from './src/app/user';
 export * from './src/app/flairfire/flairfire.component';
 export * from './src/app/footer/footer.component';
@@ -14,4 +12,3 @@ export * from './src/app/services/message.service';
 export * from './src/app/services/nav-bar.service';
 export * from './src/app/services/user.service';
 export * from './src/app/toolframe/toolframe.component';
-export * from './src/environments/environment.prod';

@@ -10,14 +10,16 @@ import {LoginService} from '../services/login.service';
 export class LoginComponent implements OnInit {
   @Input() user: User = {
     name: '',
-    token: '',
-    pass: ''
+    pass: '',
+    loggedIn: !1,
+    token: ''
   };
   onSubmit(): void {
     this.loginService.login(this.user)
       .subscribe(entries => {
-        this.user.token = entries.token;
-        console.log(this.user);
+        this.user.loggedIn = !0;
+        document.cookie = 'anToken=' + entries.token + '; domain=' +  + ';path=/';
+        /* console.log(this.user); */
       });
   }
   constructor(
