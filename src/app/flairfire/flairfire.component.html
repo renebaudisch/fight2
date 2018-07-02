@@ -1,5 +1,10 @@
-<div>
-  <p>
-    flairfire works!
-  </p>
+<div id="content">
+  <div id="wrapper">
+    <div id='firstContainer' class='Container'>
+      <span id='checkout' onclick='asmi.flairfire.load2Tag(this.id, "#secondContainer")'>Auswertung</span>
+      <span id='admin' onclick='asmi.flairfire.load2Tag(this.id, "#secondContainer")'>Settings</span>
+    </div>
+    <app-datepicker [(actualSelection)]="datepicker" (change)="loadList()"></app-datepicker>
+    <div id='secondContainer'></div>
+  </div>
 </div>

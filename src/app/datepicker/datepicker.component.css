@@ -1,0 +1,17 @@
+
+#datepicker {
+  position: relative;
+  width: 275px;
+  display: inline-block;
+}
+#datepicker ul {
+  padding: 0px;
+  margin: 0;
+}
+#datepicker ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+#datepicker ul li h3 {
+  display: inline;
+}

@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FlairfireComponent } from './flairfire/flairfire.component';
 import { RouterModule } from '@angular/router';
 import { ToolframeComponent } from './toolframe/toolframe.component';
+import { ToolframeService } from './services/toolframe.service';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MessagesComponent } from './messages/messages.component';
     ToolframeComponent,
     FooterComponent,
     LoginComponent,
-    MessagesComponent
+    MessagesComponent,
+    DatepickerComponent
   ],
   imports: [
     RouterModule,
@@ -27,7 +30,22 @@ import { MessagesComponent } from './messages/messages.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
+  exports: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  public static forRoot(): ModuleWithProviders {
+
+    return {
+      ngModule: AppModule,
+      providers: [
+        ToolframeService
+      ]
+    };
+  }
+}
