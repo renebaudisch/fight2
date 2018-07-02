@@ -2,15 +2,15 @@
   <ul>
     <li>
       <h3>Datum</h3>
-      <select id="selDay" style="width:50px;" [(value)]="actualSelection.day">
+      <select title="daySelector" id="selDay" style="width:50px;" [(ngModel)]="actualSelection.day">
         <option value=""></option>
         <option *ngFor="let day of dayArray">{{day}}</option>
       </select>
-      <select id="selMonth" style="width:50px;" [(value)]="actualSelection.month">
+      <select title="monthSelector" id="selMonth" style="width:50px;" [(ngModel)]="actualSelection.month">
         <option value=""></option>
         <option *ngFor="let month of monthArray">{{month}}</option>
       </select>
-      <select id="selYear" style="width:60px;" [(value)]="actualSelection.year">
+      <select title="yearSelector" id="selYear" style="width:60px;" [(ngModel)]="actualSelection.year">
         <option value=""></option>
         <option *ngFor="let year of yearArray">{{year}}</option>
       </select>
