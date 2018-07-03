@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '../services/message.service';
-import { NavbarElement } from '../nav-bar/nav-barElement';
-import { ADMANTOOLS } from '../nav-bar/nav-barAdman';
-import { ADTECHTOOLS } from '../nav-bar/nav-barAdtech';
+import { NavbarElement } from '../classes/nav-barElement';
+import { ADMANTOOLS } from '../classes/nav-barAdman';
+import { ADTECHTOOLS } from '../classes/nav-barAdtech';
 
 @Injectable({
   providedIn: 'root',

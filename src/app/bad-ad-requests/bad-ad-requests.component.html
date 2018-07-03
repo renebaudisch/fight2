@@ -1,0 +1,58 @@
+<div id="content" *ngIf="">
+  <div id="wrapper">
+    <div id='firstContainer' class='Container'>
+      <app-datepicker [(actualSelection)]="datepicker" (change)="loadList()"></app-datepicker>
+    </div>
+    <div id='secondContainer'>
+      <div>
+        <div class="filter" id="listFilter">
+          <span>Placement Filter (RegExp): </span>
+          <input title="listFilterInput" type="text" value="" [(ngModel)]="filter.text">
+        </div>
+        <div class="dropDownFilter">
+          <span>Publisher Filter: </span>
+          <select id="publisherFilter" title="publisherFilter" [(ngModel)]="filter.publisher">
+            <option value=""></option>
+            <option *ngFor="let publisher of publisher">{{publisher.name}}</option>
+          </select>
+        </div>
+        <ul id="errorList">
+          <li>
+            <span class="name">missing Placement</span>
+            <span class="separator">|</span>
+            <span class="publisher">Publisher</span>
+            <span class="separator">|</span>
+            <span class="device">Device</span>
+            <span class="separator">|</span>
+            <span class="placementGroup">Placement-Group</span>
+            <span class="separator">|</span>
+            <span class="placement">Placement</span>
+            <span class="separator">|</span>
+            <span class="count">count</span>
+            <span class="separator">|</span>
+            <span class="mail" onclick="ASCDP.badAdRequests.mailEntry()"></span>
+            <span class="separator">|</span>
+            <span class="create" onclick="ASCDP.badAdRequests.createPlacement()"></span>
+          </li>
+          <li *ngFor="let element of loadedList" id="{{element.id}}">
+            <span class="name">{{element.name}}</span>
+            <span class="separator">|</span>
+            <span class="publisher">{{element.publisher}}</span>
+            <span class="separator">|</span>
+            <span class="device">{{element.device}}</span>
+            <span class="separator">|</span>
+            <span class="placementGroup">{{element.placementGroup}}</span>
+            <span class="separator">|</span>
+            <span class="placement">{{element.placement}}</span>
+            <span class="separator">|</span>
+            <span class="count">{{element.count}}</span>
+            <span class="separator">|</span>
+            <span class="mail" (click)="mailEntry()"></span>
+            <span class="separator">|</span>
+            <span class="create" (click)="createPlacement()"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

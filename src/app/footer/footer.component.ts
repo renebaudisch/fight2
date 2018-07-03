@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user';
+import { User } from '../classes/user';
 
 @Component({
   selector: 'app-footer',

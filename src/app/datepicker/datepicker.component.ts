@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SelectedDate } from './selectedDate';
+import { SelectedDate } from '../classes/selectedDate';
 
 @Component({
   selector: 'app-datepicker',

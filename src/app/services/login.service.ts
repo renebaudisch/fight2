@@ -2,7 +2,7 @@ import {Injectable, Input} from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {MessageService} from './message.service';
-import {User} from '../user';
+import {User} from '../classes/user';
 
 @Injectable({
   providedIn: 'root'

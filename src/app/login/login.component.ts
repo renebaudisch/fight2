@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user';
+import { User } from '../classes/user';
 import {LoginService} from '../services/login.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
           this.user.loggedIn = !0;
           document.cookie = 'anToken=' + entries.token + '; path=/';
         } else {
-          alert('erroruser/pass incorrect');
+          alert('error user/pass incorrect');
         }
       });
   }

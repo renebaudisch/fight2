@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { BadAdRequestsComponent } from './bad-ad-requests/bad-ad-requests.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     FooterComponent,
     LoginComponent,
     MessagesComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    BadAdRequestsComponent
   ],
   imports: [
     RouterModule,
