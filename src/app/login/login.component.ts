@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       .subscribe(entries => {
         if (entries.status === 'OK') {
           this.user.loggedIn = !0;
-          document.cookie = 'anToken=' + entries.token + '; path=/';
+          document.cookie = 'anToken=' + entries.token + '; domain=' + document.domain + '; path=/';
         } else {
           alert('error user/pass incorrect');
         }

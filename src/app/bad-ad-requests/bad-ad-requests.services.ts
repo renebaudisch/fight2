@@ -19,13 +19,23 @@ export class BadAdRequestsService {
     return this.http.get<BadAdRequestsEntry>('https://adtechnology.axelspringer.com/node/services/BadAdRequests?'
       + 'day=' + ffComp.datepicker.day
       + '&month=' + ffComp.datepicker.month
-      + '&year=' + ffComp.datepicker.year);
+      + '&year=' + ffComp.datepicker.year, headers);
   }
   getPublisher(): Observable<BackendResponse> {
-    return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=publisher');
+    const headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=publisher', headers);
   }
   getPlacementGroups(): Observable<BackendResponse> {
-    return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=site');
+    const headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=site', headers);
   }
   constructor(
     private http: HttpClient) {}
