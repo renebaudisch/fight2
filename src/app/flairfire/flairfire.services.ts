@@ -19,10 +19,11 @@ export class FlairfireService {
     const headers = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      withCredentials: true
     };
-    // return this.http.post<FlairfireEntry>('https://adtechnology.axelspringer.com/tools/flaifire/data/get.php', postData, headers);
-    return this.http.get<FlairfireEntry>('https://rene.baudisch-berlin.de/test.json', headers);
+    return this.http.post<FlairfireEntry>('https://adtechnology.axelspringer.com/tools/flaifire/data/get.php', postData, headers);
+    // return this.http.get<FlairfireEntry>('https://rene.baudisch-berlin.de/test.json', headers);
   }
   constructor(
     private http: HttpClient) {}

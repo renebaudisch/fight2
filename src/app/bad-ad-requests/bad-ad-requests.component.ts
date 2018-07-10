@@ -71,7 +71,7 @@ export class BadAdRequestsComponent implements OnInit {
         if (entries.status === 'OK') {
           this.placementGroups = entries.response;
         } else {
-          alert('error loading publisher');
+          alert('error loading placements');
         }
       });
   }

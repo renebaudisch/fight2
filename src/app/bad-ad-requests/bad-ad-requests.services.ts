@@ -14,7 +14,8 @@ export class BadAdRequestsService {
     const headers = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      withCredentials: true
     };
     return this.http.get<BadAdRequestsEntry>('https://adtechnology.axelspringer.com/node/services/BadAdRequests?'
       + 'day=' + ffComp.datepicker.day
@@ -25,7 +26,8 @@ export class BadAdRequestsService {
     const headers = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      withCredentials: true
     };
     return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=publisher', headers);
   }
@@ -33,7 +35,8 @@ export class BadAdRequestsService {
     const headers = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      withCredentials: true
     };
     return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=site', headers);
   }

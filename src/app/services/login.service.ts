@@ -14,12 +14,13 @@ export class LoginService {
       username: user.name,
       password: user.pass
     };
-    const headers = {
+    const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }),
+      withCredentials: true
     };
-    return this.http.post<User>(this.nexusApi, postData, headers);
+    return this.http.post<User>(this.nexusApi, postData, options);
   }
   private log(message: string) {
     this.messageService.add('LoginService: ' + message);
