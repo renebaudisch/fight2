@@ -60,7 +60,7 @@ export class BadAdRequestsComponent implements OnInit {
   ngOnInit() {
     this.badAdRequestsService.getPublisher()
       .subscribe(entries => {
-        if (entries.status === 'OK') {
+        if (entries.publisher) {
           this.publisher = entries.publisher.results;
           console.log(this.publisher);
         } else {
@@ -69,7 +69,7 @@ export class BadAdRequestsComponent implements OnInit {
       });
     this.badAdRequestsService.getPlacementGroups()
       .subscribe(entries => {
-        if (entries.status === 'OK') {
+        if (entries.site) {
           this.placementGroups = entries.site.results;
           console.log(this.placementGroups);
         } else {
