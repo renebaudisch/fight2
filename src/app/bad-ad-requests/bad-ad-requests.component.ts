@@ -61,7 +61,8 @@ export class BadAdRequestsComponent implements OnInit {
     this.badAdRequestsService.getPublisher()
       .subscribe(entries => {
         if (entries.status === 'OK') {
-          this.publisher = entries.response;
+          this.publisher = entries.publisher.results;
+          console.log(this.publisher);
         } else {
           alert('error loading publisher');
         }
@@ -69,7 +70,8 @@ export class BadAdRequestsComponent implements OnInit {
     this.badAdRequestsService.getPlacementGroups()
       .subscribe(entries => {
         if (entries.status === 'OK') {
-          this.placementGroups = entries.response;
+          this.placementGroups = entries.site.results;
+          console.log(this.placementGroups);
         } else {
           alert('error loading placements');
         }

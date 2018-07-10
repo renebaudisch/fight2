@@ -1,4 +1,9 @@
 export class BackendResponse {
-  response: object[];
+  publisher?: {
+    results: object[]
+  };
+  site?: {
+    results: object[]
+  };
   status: string;
 }
