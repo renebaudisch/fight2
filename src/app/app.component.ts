@@ -11,7 +11,7 @@ export class AppComponent {
     name: '',
     pass: '',
     loggedIn: !1,
-    token: '',
+    mail: '',
     status: ''
   };
   onUserUpdate(user) {
