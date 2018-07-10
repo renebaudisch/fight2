@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {User} from './classes/user';
+import { Component } from '@angular/core';
+import { User } from './classes/user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import {User} from './classes/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  user: User = {
+    name: '',
+    pass: '',
+    loggedIn: !1,
+    mail: '',
+    status: ''
+  };
+  onUserUpdate(user) {
+    this.user = user;
+  }
 }
