@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { BadAdRequestsService } from './bad-ad-requests.services';
 import { BadAdRequestsEntry } from '../classes/bad-ad-requests-entry';
-import { User } from '../classes/user';
 
 @Component({
   selector: 'app-bad-ad-requests',
@@ -9,7 +8,7 @@ import { User } from '../classes/user';
   styleUrls: ['./bad-ad-requests.component.css']
 })
 export class BadAdRequestsComponent implements OnInit {
-  @Input() user: User;
+  @Input() user;
   datepicker = {
     day: new Date().getDay() + 1,
     month: new Date().getMonth() + 1,
@@ -62,7 +61,6 @@ export class BadAdRequestsComponent implements OnInit {
       .subscribe(entries => {
         if (entries.publisher) {
           this.publisher = entries.publisher.results;
-          console.log(this.publisher);
         } else {
           alert('error loading publisher');
         }
@@ -71,7 +69,6 @@ export class BadAdRequestsComponent implements OnInit {
       .subscribe(entries => {
         if (entries.site) {
           this.placementGroups = entries.site.results;
-          console.log(this.placementGroups);
         } else {
           alert('error loading placements');
         }

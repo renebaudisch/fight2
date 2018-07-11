@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Routes} from '@angular/router';
 import {FlairfireComponent} from '../flairfire/flairfire.component';
 import { NavbarElement } from '../classes/nav-barElement';
@@ -11,6 +11,7 @@ import { NavBarService } from '../services/nav-bar.service';
 })
 
 export class NavBarComponent implements OnInit {
+  @Input() user;
   logoUrl = 'https://adtechnology.axelspringer.com/assets/img/logorot_kl.png';
   mainEntries = mainElements;
   isString = function(url) {
@@ -45,10 +46,12 @@ const mainElements: NavbarElement[] = [{
   url: 'https://fplanner.mediaimpact.de/',
   name: 'FPlanner',
   target: '_blank',
+  permissionLevel: 0
 }, {
   url: 'https://console.appnexus.com/',
   name: 'AppNexus Console',
   target: '_blank',
+  permissionLevel: 0
 }];
 
 export const routerConfig: Routes = [

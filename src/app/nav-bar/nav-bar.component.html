@@ -4,9 +4,14 @@
       <li class="nav-item" *ngFor="let navbarMainElement of mainEntries">
         <a *ngIf="!isString(navbarMainElement.url);" class="nav-link">{{navbarMainElement.name}}</a>
         <ul *ngIf="!isString(navbarMainElement.url); else noUl">
-          <li *ngFor="let navbarElement of navbarMainElement.url">
-            <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
-          </li>
+          <ng-container *ngFor="let navbarElement of navbarMainElement.url">
+            <li *ngIf="navbarElement.permissionLevel <= user.permissionLevel;">
+              <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
+            </li>
+            <ng-template #notPermitted>
+              <a>{{navbarElement.name}}</a>
+            </ng-template>
+          </ng-container>
         </ul>
         <ng-template #noUl>
           <a class="nav-link" target="{{navbarMainElement.target}}" href="{{navbarMainElement.url}}">{{navbarMainElement.name}}</a>

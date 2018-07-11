@@ -1,9 +1,27 @@
 export class BackendResponse {
   publisher?: {
-    results: object[]
+    results: Publisher[]
   };
   site?: {
-    results: object[]
+    results: Site[]
   };
-  status: string;
+  status?: string;
+}
+
+class Publisher {
+  code: string;
+  id: number;
+  last_modified: string;
+  member_id: number;
+  name: string;
+  state: string;
+}
+
+class Site {
+  code: string;
+  id: number;
+  last_modified: string;
+  name: string;
+  publisher_id: number;
+  state: 'active';
 }

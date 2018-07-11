@@ -4,4 +4,6 @@ export class User {
   pass: string;
   mail: string;
   status: string;
+  permissionLevel: number;
+  nexus?: object;
 }

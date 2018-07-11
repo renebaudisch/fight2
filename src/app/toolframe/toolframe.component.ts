@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {User} from '../classes/user';
 
 @Component({
   selector: 'app-toolframe',
@@ -7,7 +6,7 @@ import {User} from '../classes/user';
   styleUrls: ['./toolframe.component.css']
 })
 export class ToolframeComponent implements OnInit {
-  @Input() user: User;
+  @Input() user;
   @Output() userUpdate = new EventEmitter<Object>();
   onUserUpdate(user) {
     this.user = user;

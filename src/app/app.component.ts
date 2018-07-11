@@ -12,7 +12,8 @@ export class AppComponent {
     pass: '',
     loggedIn: !1,
     mail: '',
-    status: ''
+    status: '',
+    permissionLevel: 0
   };
   onUserUpdate(user) {
     this.user = user;
