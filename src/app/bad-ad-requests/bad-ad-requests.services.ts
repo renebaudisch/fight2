@@ -18,8 +18,8 @@ export class BadAdRequestsService {
       withCredentials: true
     };
     return this.http.get<BadAdRequestsEntry>('https://adtechnology.axelspringer.com/node/services/BadAdRequests?'
-      + 'day=' + ffComp.datepicker.day
-      + '&month=' + ffComp.datepicker.month
+      + 'day=' + ((ffComp.datepicker.day < 10 ? '0' : '') + ffComp.datepicker.day)
+      + '&month=' + ((ffComp.datepicker.month < 10 ? '0' : '') + ffComp.datepicker.month)
       + '&year=' + ffComp.datepicker.year, headers);
   }
   getPublisher(): Observable<BackendResponse> {

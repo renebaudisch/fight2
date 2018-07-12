@@ -4,10 +4,10 @@ td {
 
 app-datepicker {
   position: absolute;
-  width: 205px;
+  width: 220px;
   display: inline-block;
   vertical-align: top;
-  right: 0px;
+  right: 1%;
 }
 
 app-datepicker ul {
@@ -22,6 +22,7 @@ app-datepicker ul li{
 
 app-datepicker ul li h3 {
   display: inline;
+  padding-right: 5px;
 }
 
 #firstContainer span{
@@ -126,10 +127,10 @@ span.placement {
   cursor: pointer;
 }
 span.mail {
-  background-image: url('/src/assets/images/mail.png');
+  background-image: url('/assets/images/mail.png');
 }
 span.create {
-  background-image: url('/src/assets/images/add.png');
+  background-image: url('/assets/images/add.png');
 }
 .filter, .dropDownFilter {
   padding-left: 10px;

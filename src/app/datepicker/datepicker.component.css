@@ -1,11 +1,11 @@
 
 #datepicker {
   position: relative;
-  width: 275px;
+  width: 225px;
   display: inline-block;
 }
 #datepicker ul {
-  padding: 0px;
+  padding: 0;
   margin: 0;
 }
 #datepicker ul li {
