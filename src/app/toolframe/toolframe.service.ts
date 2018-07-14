@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { APP_SERVER_URL } from '../toolframe/toolframe.config';
+import { APP_SERVER_URL } from './toolframe.config';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()

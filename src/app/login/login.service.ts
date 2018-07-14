@@ -1,7 +1,7 @@
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {MessageService} from './message.service';
+import {MessagesService} from '../messages/messages.service';
 import {User} from '../classes/user';
 
 @Injectable({
@@ -22,10 +22,6 @@ export class LoginService {
     };
     return this.http.post<User>(this.nexusApi, postData, options);
   }
-  private log(message: string) {
-    this.messageService.add('LoginService: ' + message);
-  }
   constructor(
-    private http: HttpClient,
-    private messageService: MessageService) {}
+    private http: HttpClient) {}
 }

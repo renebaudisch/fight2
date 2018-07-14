@@ -7,6 +7,7 @@ import { User } from './classes/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  activeRequests = 0;
   user: User = {
     name: '',
     pass: '',
@@ -17,5 +18,12 @@ export class AppComponent {
   };
   onUserUpdate(user) {
     this.user = user;
+  }
+  onMessageUpdate(msg) {
+    if (msg.context === 'startRequest') {
+      this.activeRequests++;
+    } else if (msg.context === 'finishedRequest') {
+      this.activeRequests--;
+    }
   }
 }

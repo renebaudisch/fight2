@@ -1,2 +1,3 @@
 <app-toolframe [(user)]="user" (userUpdate)="onUserUpdate($event)"></app-toolframe>
-<app-messages></app-messages>
+<app-messages (globalMessage)="onMessageUpdate($event)"></app-messages>
+<div class='waiting' id='waiting' *ngIf="activeRequests > 0"><img src='/src/assets/images/waiting.gif' /></div>

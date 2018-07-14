@@ -1,9 +1,9 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {BadAdRequestsComponent} from './bad-ad-requests.component';
-import {BadAdRequestsEntry} from '../classes/bad-ad-requests-entry';
-import {BackendResponse} from '../classes/backendResponse';
+import {BadAdRequestsEntry} from './bad-ad-requests-entry';
+import {BackendResponse} from './backendResponse';
 
 @Injectable({
   providedIn: 'root'

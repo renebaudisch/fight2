@@ -1,7 +1,7 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs/index';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {FlairfireEntry} from '../classes/flairfireEntry';
+import {FlairfireEntry} from './flairfireEntry';
 import {FlairfireComponent} from './flairfire.component';
 
 @Injectable({

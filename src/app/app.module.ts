@@ -6,7 +6,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FlairfireComponent } from './flairfire/flairfire.component';
 import { RouterModule } from '@angular/router';
 import { ToolframeComponent } from './toolframe/toolframe.component';
-import { ToolframeService } from './services/toolframe.service';
+import { ToolframeService } from './toolframe/toolframe.service';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';

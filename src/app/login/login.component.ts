@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {LoginService} from '../services/login.service';
+import {LoginService} from './login.service';
 import {NodeApiService} from '../services/node-api.service';
 
 @Component({

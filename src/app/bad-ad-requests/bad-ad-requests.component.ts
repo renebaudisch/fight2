@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { BadAdRequestsService } from './bad-ad-requests.services';
-import { BadAdRequestsEntry } from '../classes/bad-ad-requests-entry';
+import { BadAdRequestsEntry } from './bad-ad-requests-entry';
+import {MessagesService} from '../messages/messages.service';
 
 @Component({
   selector: 'app-bad-ad-requests',
@@ -33,6 +34,7 @@ export class BadAdRequestsComponent implements OnInit {
   };
   loadList = function() {
     this.loadedList = [];
+    this.messageService.emit('startRequest');
     this.badAdRequestsService.getListByDay(this)
       .subscribe(response => {
         const listObject = {};
@@ -82,6 +84,7 @@ export class BadAdRequestsComponent implements OnInit {
           }
         }
         this.loadedList = objectArray;
+        this.messageService.emit('finishedRequest');
       });
   };
   toggleURIList = function(clickedNode) {
@@ -105,9 +108,11 @@ export class BadAdRequestsComponent implements OnInit {
   };
   createPlacement = function(id) {
   };
-  constructor(private badAdRequestsService: BadAdRequestsService) { }
+  constructor(private badAdRequestsService: BadAdRequestsService, private messageService: MessagesService) { }
 
   ngOnInit() {
+    this.messageService.emit('startRequest');
+    this.messageService.emit('startRequest');
     this.badAdRequestsService.getPublisher()
       .subscribe(entries => {
         if (entries.publisher) {
@@ -118,6 +123,7 @@ export class BadAdRequestsComponent implements OnInit {
             };
           }
           this.publisher = entries.publisher.results;
+          this.messageService.emit('finishedRequest');
         } else {
           alert('error loading publisher');
         }
@@ -133,6 +139,7 @@ export class BadAdRequestsComponent implements OnInit {
             };
           }
           this.placementGroups = entries.site.results;
+          this.messageService.emit('finishedRequest');
         } else {
           alert('error loading placements');
         }

@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Routes} from '@angular/router';
 import {FlairfireComponent} from '../flairfire/flairfire.component';
-import { NavbarElement } from '../classes/nav-barElement';
-import { NavBarService } from '../services/nav-bar.service';
+import { NavbarElement } from './nav-barElement';
+import { NavBarService } from './nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',
