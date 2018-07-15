@@ -40,6 +40,15 @@ export class BadAdRequestsService {
     };
     return this.http.get<BackendResponse>('https://adtechnology.axelspringer.com/node/services/lookup?type=site', headers);
   }
+  mail(postdata): Observable<BackendResponse> {
+    const headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      withCredentials: true
+    };
+    return this.http.post<BackendResponse>('https://adtechnology.axelspringer.com/node/services/mail', postdata, headers);
+  }
   constructor(
     private http: HttpClient) {}
 }

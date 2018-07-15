@@ -105,6 +105,30 @@ export class BadAdRequestsComponent implements OnInit {
     }
   };
   mailEntry = function(id) {
+    const receiver = window.prompt('Please enter email adresses (separated by comma):');
+    const postdata = {
+      'from': 'adtechnology@axelspringer.de',
+      'to': receiver || this.user.mail,
+      'cc': 'adtechnology@axelspringer.de,' + this.user.mail,
+      'subject': 'adSolutions Bug Report - missing PlacementGroup(s)',
+      'text': '<h3>Dear customer</h3><div>Please see attached list of not recognised placementGroup(s)</div><ul>'
+    };
+
+    if (id) {
+      postdata.text += '<li>' + id + '</li>';
+    } else {
+      const selected = document.querySelectorAll('#errorList li:not(.hidden)');
+      for (let i = 1; i < selected.length; i++) {
+        postdata.text += '<li>' + selected[i].children['0'].innerHTML + '</li>';
+      }
+    }
+
+    postdata.text += ('</ul>' + this.user.signatureString);
+
+    this.badAdRequestsService.mail(postdata)
+      .subscribe(result => {
+        this.messageService.add(result.response, 200);
+      });
   };
   createPlacement = function(id) {
   };

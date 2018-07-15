@@ -6,10 +6,26 @@ import {EventEmitter, Injectable, Output} from '@angular/core';
 export class MessagesService {
   messages: string[] = [];
   globalMessage: Object = {};
+  @Output() newClass = new EventEmitter();
   @Output() emitter = new EventEmitter();
 
-  add(message: string) {
+  add(message: string, statusCode?: number) {
+    let statusClass;
     this.messages.push(message);
+    switch (statusCode) {
+      case 200:
+        statusClass = 'success';
+        break;
+      case 400:
+        statusClass = 'error';
+        break;
+      case 5:
+        statusClass = 'warning';
+        break;
+      default:
+        statusClass = '';
+    }
+    this.newClass.emit(statusClass);
   }
 
   log(message: string) {

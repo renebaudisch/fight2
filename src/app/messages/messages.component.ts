@@ -8,6 +8,7 @@ import { MessagesService } from './messages.service';
 })
 export class MessagesComponent implements OnInit {
   @Output() globalMessage = new EventEmitter<Object>();
+  messageClass: String = '';
 
   constructor(public messageService: MessagesService) {}
 
