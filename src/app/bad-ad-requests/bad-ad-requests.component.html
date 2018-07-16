@@ -48,7 +48,7 @@
               <span class="separator">|</span>
               <span class="count">{{element.count}}</span>
               <span class="separator">|</span>
-              <span class="mail" (click)="mailEntry(this)"></span>
+              <span class="mail" (click)="mailEntry(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
               <span class="separator">|</span>
               <span class="create" (click)="createPlacement(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
             </li>

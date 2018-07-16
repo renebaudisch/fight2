@@ -117,7 +117,7 @@ export class BadAdRequestsComponent implements OnInit {
     if (id) {
       postdata.text += '<li>' + id + '</li>';
     } else {
-      const selected = document.querySelectorAll('#errorList li:not(.hidden)');
+      const selected = document.querySelectorAll('#errorList li');
       for (let i = 1; i < selected.length; i++) {
         postdata.text += '<li>' + selected[i].children['0'].innerHTML + '</li>';
       }
