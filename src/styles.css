@@ -83,7 +83,7 @@ body {
   right: -12px;
   cursor:pointer;
   z-index: 999999;
-  background: url(/src/assets/images/buttons.png) -53px 0;
+  background: url(/assets/images/buttons.png) -53px 0;
 }
 
 .waiting {

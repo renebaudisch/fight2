@@ -104,10 +104,10 @@ span.placement {
   cursor: pointer;
 }
 span.mail {
-  background-image: url('/src/assets/images/mail.png');
+  background-image: url('/assets/images/mail.png');
 }
 span.create {
-  background-image: url('/src/assets/images/add.png');
+  background-image: url('/assets/images/add.png');
 }
 .filter, .dropDownFilter {
   padding-left: 10px;

@@ -10,10 +10,14 @@ export class MessagesComponent implements OnInit {
   @Output() globalMessage = new EventEmitter<Object>();
   messageClass: String = '';
 
+  hideBox = function() {
+    document.getElementById('#messageBox').style.display = 'none';
+  };
   constructor(public messageService: MessagesService) {}
 
   ngOnInit() {
     this.messageService.emitter.subscribe(event => this.globalMessage.emit(event));
+    this.messageService.newClass.subscribe(event => this.messageClass = event);
   }
 
 }
