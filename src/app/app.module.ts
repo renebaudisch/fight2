@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { BadAdRequestsComponent } from './bad-ad-requests/bad-ad-requests.component';
+import { BlocktrackComponent } from './blocktrack/blocktrack.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BadAdRequestsComponent } from './bad-ad-requests/bad-ad-requests.compon
     LoginComponent,
     MessagesComponent,
     DatepickerComponent,
-    BadAdRequestsComponent
+    BadAdRequestsComponent,
+    BlocktrackComponent
   ],
   imports: [
     RouterModule,

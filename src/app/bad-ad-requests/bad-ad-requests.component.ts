@@ -29,9 +29,6 @@ export class BadAdRequestsComponent implements OnInit {
   publisher = [];
   placementGroups = [];
   loadedList: [BadAdRequestsEntry];
-  makeFilterExp = function(str) {
-    return new RegExp(str.replace('.', '\.').replace(' ', '.').replace('&', '\&').replace('(', '\(').replace(')', '\)'), 'i');
-  };
   loadList = function() {
     this.loadedList = [];
     this.messageService.emit('startRequest');
@@ -88,7 +85,7 @@ export class BadAdRequestsComponent implements OnInit {
       });
   };
   toggleURIList = function(clickedNode) {
-    const urlList = clickedNode.parentNode.querySelector('ul.urlList');
+    const urlList = clickedNode.querySelector('ul.urlList');
     if (urlList.innerHTML === '') {
       for (let u = 0; u < this.loadedList[clickedNode.innerHTML].urls.length; u++) {
         if (urlList.innerHTML.indexOf(this.loadedList[clickedNode.innerHTML].urls[u]) === -1) {

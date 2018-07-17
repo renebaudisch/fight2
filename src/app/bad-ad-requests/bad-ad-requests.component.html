@@ -30,29 +30,29 @@
             <span class="separator">|</span>
             <span class="count">count</span>
             <span class="separator">|</span>
-            <span class="mail" onclick="ASCDP.badAdRequests.mailEntry()"></span>
+            <span class="mail" (click)="mailEntry()"></span>
             <span class="separator">|</span>
-            <span class="create" onclick="ASCDP.badAdRequests.createPlacement()"></span>
+            <span class="create" (click)="createPlacement()"></span>
           </li>
           <ng-container *ngFor="let element of loadedList">
-            <li *ngIf="element.name.match(makeFilterExp((filter.publisher !== '' ? '^' + filter.publisher + '.*' : '') + filter.text));">
-              <span class="name" (click)="toggleURIList(this)">{{element.name}}</span>
-              <span class="separator">|</span>
-              <span class="publisher {{publisherObject[element.publisher] ? '' : 'error'}}">{{element.publisher}}</span>
-              <span class="separator">|</span>
-              <span class="device {{devices[element.device] ? '' : 'error'}}">{{element.device}}</span>
-              <span class="separator">|</span>
-              <span class="placementGroup {{placementGroupsObject[element.publisher + '-' + element.device + '-' + element.placementGroup] ? '' : 'error'}}">{{element.placementGroup}}</span>
-              <span class="separator">|</span>
-              <span class="placement error">{{element.placement}}</span>
-              <span class="separator">|</span>
-              <span class="count">{{element.count}}</span>
-              <span class="separator">|</span>
-              <span class="mail" (click)="mailEntry(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
-              <span class="separator">|</span>
-              <span class="create" (click)="createPlacement(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
-            </li>
-          </ng-container>
+          <li *ngIf="element.name.match(makeFilterExp((filter.publisher !== '' ? '^' + filter.publisher + '.*' : '') + filter.text));">
+            <span class="name" (click)="toggleURIList(this)">{{element.name}}</span>
+            <span class="separator">|</span>
+            <span class="publisher {{publisherObject[element.publisher] ? '' : 'error'}}">{{element.publisher}}</span>
+            <span class="separator">|</span>
+            <span class="device {{devices[element.device] ? '' : 'error'}}">{{element.device}}</span>
+            <span class="separator">|</span>
+            <span class="placementGroup {{placementGroupsObject[element.publisher + '-' + element.device + '-' + element.placementGroup] ? '' : 'error'}}">{{element.placementGroup}}</span>
+            <span class="separator">|</span>
+            <span class="placement error">{{element.placement}}</span>
+            <span class="separator">|</span>
+            <span class="count">{{element.count}}</span>
+            <span class="separator">|</span>
+            <span class="mail" (click)="mailEntry(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
+            <span class="separator">|</span>
+            <span class="create" (click)="createPlacement(element.publisher + '-' + element.device + '-' + element.placementGroup)"></span>
+          </li>
+        </ng-container>
         </ul>
       </div>
     </div>
