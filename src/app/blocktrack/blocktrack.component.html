@@ -1,5 +1,15 @@
-<p>
-  blocktrack works!
-</p>
+<div id="mainContainer">
+  <div id="optionBox" class="Container">
+    <div class="dropDownFilter">
+      <span>Publisher Filter: </span>
+      <select id="publisherFilter" title="publisherFilter" [(ngModel)]="selectedPublisher">
+        <option value=""></option>
+        <option *ngFor="let publisher of publisher">{{publisher.name}}</option>
+      </select>
+    </div>
+    <app-datepicker [(actualSelection)]="datepicker" (change)="loadDate()"></app-datepicker>
+  </div>
+  <div id="contentBox" class="Container">
 
-<app-datepicker [(actualSelection)]="datepicker" (change)="loadList()"></app-datepicker>
+  </div>
+</div>

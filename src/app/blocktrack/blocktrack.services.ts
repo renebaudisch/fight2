@@ -15,7 +15,7 @@ export class BlocktrackService {
       }),
       withCredentials: true
     };
-    return this.http.get<BlocktrackComponent>('https://adtechnology.axelspringer.com/node/services/BadAdRequests?'
+    return this.http.get<BlocktrackComponent>('https://adtechnology.axelspringer.com/tools/blocktrack/data/get.php?'
       + 'day=' + ((ffComp.datepicker.day < 10 ? '0' : '') + ffComp.datepicker.day)
       + '&month=' + ((ffComp.datepicker.month < 10 ? '0' : '') + ffComp.datepicker.month)
       + '&year=' + ffComp.datepicker.year, headers);

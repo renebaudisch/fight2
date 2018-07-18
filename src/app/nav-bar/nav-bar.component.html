@@ -6,7 +6,7 @@
         <ul *ngIf="!isString(navbarMainElement.url); else noUl">
           <ng-container *ngFor="let navbarElement of navbarMainElement.url">
             <li *ngIf="navbarElement.permissionLevel <= user.permissionLevel;">
-              <a href="{{navbarElement.url}}" target="{{navbarElement.target}}">{{navbarElement.name}}</a>
+              <a [routerLink]="[navbarElement.url]">{{navbarElement.name}}</a>
             </li>
             <ng-template #notPermitted>
               <a>{{navbarElement.name}}</a>

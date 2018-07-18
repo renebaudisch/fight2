@@ -14,6 +14,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { BadAdRequestsComponent } from './bad-ad-requests/bad-ad-requests.component';
 import { BlocktrackComponent } from './blocktrack/blocktrack.component';
+import { routes } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { BlocktrackComponent } from './blocktrack/blocktrack.component';
     BlocktrackComponent
   ],
   imports: [
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     HttpClientModule

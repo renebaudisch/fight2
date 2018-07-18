@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Routes} from '@angular/router';
-import {FlairfireComponent} from '../flairfire/flairfire.component';
 import { NavbarElement } from './nav-barElement';
 import { NavBarService } from './nav-bar.service';
 
@@ -25,7 +23,7 @@ export class NavBarComponent implements OnInit {
     this.navBarService.getAdTechTools()
       .subscribe(entries => this.mainEntries[1].url = entries);
   }
-  constructor(private navBarService: NavBarService) { }
+  constructor(private navBarService: NavBarService) {}
 
   ngOnInit() {
     this.getAdmanTools();
@@ -53,21 +51,3 @@ const mainElements: NavbarElement[] = [{
   target: '_blank',
   permissionLevel: 0
 }];
-
-export const routerConfig: Routes = [
-  {
-    path: 'flairfire',
-    component: FlairfireComponent
-  },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
-];
-
