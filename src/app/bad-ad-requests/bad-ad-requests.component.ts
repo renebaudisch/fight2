@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { BadAdRequestsService } from './bad-ad-requests.services';
 import { BadAdRequestsEntry } from './bad-ad-requests-entry';
 import {MessagesService} from '../messages/messages.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-bad-ad-requests',
@@ -129,9 +130,12 @@ export class BadAdRequestsComponent implements OnInit {
   };
   createPlacement = function(id?) {
   };
-  constructor(private badAdRequestsService: BadAdRequestsService, private messageService: MessagesService) { }
+  constructor(private badAdRequestsService: BadAdRequestsService,
+              private messageService: MessagesService,
+              private userService: UserService) { }
 
   ngOnInit() {
+    this.user = this.userService.user;
     this.messageService.emit('startRequest');
     this.messageService.emit('startRequest');
     this.badAdRequestsService.getPublisher()

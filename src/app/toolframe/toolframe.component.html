@@ -1,4 +1,4 @@
 <app-nav-bar [user]="user" ></app-nav-bar>
 <app-login *ngIf="!user.loggedIn" [(user)]="user" (userUpdate)="onUserUpdate($event)"></app-login>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="user.loggedIn" ></router-outlet>
 <app-footer></app-footer>

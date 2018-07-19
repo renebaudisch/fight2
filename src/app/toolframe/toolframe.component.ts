@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-toolframe',
@@ -11,8 +12,9 @@ export class ToolframeComponent implements OnInit {
   onUserUpdate(user) {
     this.user = user;
     this.userUpdate.emit(this.user);
+    this.userService.user = user;
   }
-  constructor() { }
+  constructor(private userService: UserService) { }
   ngOnInit() {
   }
 
