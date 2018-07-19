@@ -101,7 +101,7 @@ export class BadAdRequestsComponent implements OnInit {
       urlList.style.display = 'none';
     }
   };
-  mailEntry = function(id) {
+  mailEntry = function(id?) {
     const receiver = window.prompt('Please enter email adresses (separated by comma):');
     const postdata = {
       'from': 'adtechnology@axelspringer.de',
@@ -127,7 +127,7 @@ export class BadAdRequestsComponent implements OnInit {
         this.messageService.add(result.response, 200);
       });
   };
-  createPlacement = function(id) {
+  createPlacement = function(id?) {
   };
   constructor(private badAdRequestsService: BadAdRequestsService, private messageService: MessagesService) { }
 
