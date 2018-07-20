@@ -1,52 +1,52 @@
 import { NavbarElement } from './nav-barElement';
 
 export const ADTECHTOOLS: NavbarElement[] = [{
-  url: '/tools/AdGap/',
+  url: '/node/AdGap/',
   name: 'AdGap',
   target: '_top',
   permissionLevel: 2
 }, {
-  url: '/tools/badAdRequests/',
+  url: '/node/badAdRequests/',
   name: 'Bad Ad Requests',
   target: '_top',
   permissionLevel: 1
 }, {
-  url: '/tools/blocktrack/',
+  url: '/node/blocktrack/',
   name: 'Blocktrack',
   target: '_top',
   permissionLevel: 2
 }, {
-  url: '/tools/blocktrack_mobile/',
+  url: '/node/blocktrack_mobile/',
   name: 'Blocktrack mobile',
   target: '_top',
   permissionLevel: 2
 }, {
-  url: '/tools/crawler/',
+  url: '/node/crawler/',
   name: 'Crawler',
   target: '_top',
   permissionLevel: 3
 }, {
-  url: '/tools/flairfire/',
+  url: '/node/flairfire/',
   name: 'Flairfire',
   target: '_top',
   permissionLevel: 3
 }, {
-  url: '/tools/pageSetGen/',
+  url: '/node/pageSetGen/',
   name: 'PageSet Generator',
   target: '_top',
   permissionLevel: 3
 }, {
-  url: '/tools/VideoFillrates/',
+  url: '/node/VideoFillrates/',
   name: 'Video Fillrates',
   target: '_top',
   permissionLevel: 3
 }, {
-  url: '/tools/VideoStats/',
+  url: '/node/VideoStats/',
   name: 'Video Stats',
   target: '_top',
   permissionLevel: 3
 }, {
-  url: '/tools/Placemanagement/',
+  url: '/node/Placemanagement/',
   name: 'Placements',
   target: '_top',
   permissionLevel: 3

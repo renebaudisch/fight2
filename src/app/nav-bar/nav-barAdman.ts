@@ -1,32 +1,32 @@
 import { NavbarElement } from './nav-barElement';
 
 export const ADMANTOOLS: NavbarElement[] = [{
-  url: '/tools/ACE/',
+  url: '/node/ACE/',
   name: 'ACE',
   target: '_top',
   permissionLevel: 2
 }, {
-  url: '/tools/catman/',
+  url: '/node/catman/',
   name: 'Catman',
   target: '_top',
   permissionLevel: 1
 }, {
-  url: '/tools/previewGenerator/',
+  url: '/node/previewGenerator/',
   name: 'Preview Generator',
   target: '_top',
   permissionLevel: 0
 }, {
-  url: '/tools/checkScript/',
+  url: '/node/checkScript/',
   name: 'Redirect Checker',
   target: '_top',
   permissionLevel: 1
 }, {
-  url: '/tools/html5integrator/',
+  url: '/node/html5integrator/',
   name: 'HTML5 Integrator',
   target: '_top',
   permissionLevel: 1
 }, {
-  url: '/tools/VASTchecker/',
+  url: '/node/VASTchecker/',
   name: 'VAST Checker',
   target: '_top',
   permissionLevel: 1
