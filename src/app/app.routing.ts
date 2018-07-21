@@ -4,8 +4,8 @@ import {BlocktrackComponent} from './blocktrack/blocktrack.component';
 import {FlairfireComponent} from './flairfire/flairfire.component';
 
 export const routes: Routes = [
-  { path: 'node/badAdRequests', component: BadAdRequestsComponent},
-  { path: 'node/blocktrack', component: BlocktrackComponent},
-  { path: 'node/flairfire', component: FlairfireComponent}
+  { path: 'tools/badAdRequests', component: BadAdRequestsComponent},
+  { path: 'tools/blocktrack', component: BlocktrackComponent},
+  { path: 'tools/flairfire', component: FlairfireComponent}
 ];
 
